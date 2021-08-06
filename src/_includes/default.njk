@@ -1,0 +1,69 @@
+---
+#default YAML frontmatter
+title: You forgot title?
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title + ' | ' + site.name}}</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+    crossorigin="anonymous">
+  <link rel="shortcut icon" href={{ '/assets/favicon.ico' | url}}
+    type="image/x-icon">
+  <link rel="stylesheet" href={{ '/assets/global.css' | url }}>
+</head>
+
+<body>
+  <div class="bg-dark text-white">
+    <header class="container d-flex align-items-center">
+      <a href={{ '/' | url }}><img src="{{ '/assets/logo.png' | url }}"
+          alt="SpinSpire logo"></a>
+      <ul class="nav">
+        <li class="nav-item">
+          <a href={{ '/' | url }} class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href={{ '/articles' | url }} class="nav-link">Articles</a>
+        </li>
+        <li class="nav-item">
+          <a href="https://11ty.dev" class="nav-link" target="_blank">11ty</a>
+        </li>
+        <li class="nav-item">
+          <a href="https://drupal.org" class="nav-link"
+            target="_blank">Drupal</a>
+        </li>
+        <li class="nav-item">
+          <a href="https://spinspire.com" class="nav-link"
+            target="_blank">SpinSpire</a>
+        </li>
+      </ul>
+    </header>
+  </div>
+
+  <main id="main" class="container transition-fade">
+    <h1 class="display-2">{{ title }}</h1>
+    {{ content | safe }}
+  </main>
+
+  <div class="bg-dark text-white">
+    <footer class="container">
+      <p>Built with <span class="heart">❤️</span> by <a
+          href="https://spinspire.com" target="_blank">SpinSpire</a></p>
+    </footer>
+  </div>
+  <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+  <script>
+    new Swup({
+      containers: ["#main"],
+      animateHistoryBrowsing: true,
+    });
+  </script>
+</body>
+
+</html>

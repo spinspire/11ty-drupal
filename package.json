@@ -1,0 +1,23 @@
+{
+  "name": "11ty-drupal-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "dev": "eleventy --watch --serve",
+    "watch": "eleventy --watch",
+    "build": "eleventy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "@swup/overlay-theme": "^1.1.1",
+    "node-fetch": "^2.6.1",
+    "swup": "^2.0.14"
+  }
+}
